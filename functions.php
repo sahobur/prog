@@ -1,0 +1,49 @@
+<?php
+/// funcs
+function get_user_info($link,$name){
+	echo "name: ".$name."<br>";
+	$data = mysqli_query($link,"SELECT * FROM `users` WHERE `name` = '$name'");
+	if(!$data) die(mysqli_error($link));
+	$data = mysqli_fetch_assoc($data);
+	echo json_encode($data);
+
+}
+
+function create_user($link,$name,$pass,$info){
+	$data = mysqli_query($link,"INSERT INTO `users` (`id`,`name`, `password`, `info`) VALUES (NULL,'$name', '$pass', '$info')");
+	if(!$data) die(mysqli_error($link));
+	echo "User created";
+	get_user_info($link,$name);
+
+}
+
+function delete_user($link,$name){
+	$data = mysqli_query($link,"DELETE FROM `users` WHERE `name` = '$name'");
+	if(!$data) die(mysqli_error($link));
+	echo "User deleted";
+
+}
+
+function update_user($link,$name,$pass,$info){
+	get_user_info($link,$name);
+	$data = mysqli_query($link,"UPDATE `users` SET `password` = '$pass',`info` = '$info' WHERE `name` = '$name'");
+	if(!$data) die(mysqli_error($link));
+	echo "User updated";
+	get_user_info($link,$name);
+
+}
+
+
+function auth_user($link,$name,$pass){
+//	echo "name: ".$name."<br>";
+	$data = mysqli_query($link,"SELECT `password` FROM `users` WHERE `name` = '$name'");
+	if(!$data) die(mysqli_error($link));
+	$data = mysqli_fetch_assoc($data);
+	if($data["password"] == $pass) 	
+		 $r = [ "auth" => "authorized" ];
+	else
+		$r = [ "auth" => "auth_denied" ];
+	echo json_encode($r);
+
+}
+?>
