@@ -8,7 +8,6 @@ $q =  $_GET['q'];
 
 $r = explode("/",$q);
 //print_r($r);
-//
 
 switch($r[0]) {
 	case "user":
