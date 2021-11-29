@@ -8,14 +8,14 @@ function create_user($link,$name,$pass,$info)
 // создает юзера , запрос вида test.stbur.ru/create/user-5/pass_user5/Ulan-Ude%2030.11.2021
 
 function delete_user($link,$name)
-// выпилвиает юзера по имени test.stbur.ru/delete/user-2
+// выпиливает юзера по имени test.stbur.ru/delete/user-2
   
 
 function update_user($link,$name,$pass,$info){
 // изменени юзера . по сути то же что и create_user
 
 function auth_user($link,$name,$pass)
-// авторизация. Сравнивает пару логин-пароль, при успехе возвращает autorized
+// авторизация. Сравнивает пару логин-пароль, при успехе возвращает authorized
 
 
 
