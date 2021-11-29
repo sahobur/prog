@@ -1,3 +1,3 @@
 <?
-echo "asdfasdf";
+echo "TEST";
 
