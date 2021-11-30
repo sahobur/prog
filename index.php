@@ -9,7 +9,7 @@ $q =  $_GET['q'];
 $r = explode("/",$q);
 //print_r($r);
 if($r[0]=='auth') {
-	auth_user($link);
+	auth_user($link,$r[1],$r[2]);
  }
 
 $auth = isAuth($link);
