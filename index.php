@@ -16,7 +16,7 @@ $auth = isAuth($link);
 if($auth) {
 	switch($r[0]) {
 		case "user":
-			(isAuth($authok)) get_user_info($link,$r[1]);
+			get_user_info($link,$r[1]);
 			break;
 		case "create":
 
