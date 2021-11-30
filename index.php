@@ -2,8 +2,8 @@
 
 require "db.php";
 require "functions.php";
-echo "TEST";
-//echo $db;
+//echo "TEST";
+////echo $db;
 $auth = false;
 $q =  $_GET['q'];
 $r = explode("/",$q);
@@ -32,7 +32,10 @@ if($auth) {
 			die("Error reques");
 		}
 }
-
+else {
+    http_response_code(401);
+    die("Unauth");
+}
 
 
 
