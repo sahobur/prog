@@ -6,9 +6,9 @@ function isAuth($link){
 	if(isset($_SERVER['HTTP_TOKEN'])) {
 		$token = $_SERVER['HTTP_TOKEN'];
 		echo "HTTP_TOKEN: ".$token."\n";
-		$data = mysqli_query($link,"SELECT `token` FROM `token`");
+		$data = mysqli_query($link,"SELECT `token` FROM `token` WHERE `token` = '$token'");
 		//		echo "mysql err: ";
-		$rz = mysqli_fetch_assoc($data);
+//		$rz = mysqli_fetch_assoc($data);
 		print_r($rz);
 //		echo "db token: ".$rz["token"]."\n";
 
