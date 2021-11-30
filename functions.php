@@ -1,6 +1,5 @@
 <?php
 /// funcs
-<<<<<<< HEAD
 function isAuth($link){
 	if(isset($_SERVER['HTTP_TOKEN'])) {
 		$token = $_SERVER['HTTP_TOKEN'];
@@ -10,8 +9,6 @@ function isAuth($link){
 	return false;
 }
 
-=======
->>>>>>> origin/master
 function get_user_info($link,$name){
 	echo "name: ".$name."<br>";
 	$data = mysqli_query($link,"SELECT * FROM `users` WHERE `name` = '$name'");
@@ -51,7 +48,6 @@ function auth_user($link,$name,$pass){
 	$data = mysqli_query($link,"SELECT `password` FROM `users` WHERE `name` = '$name'");
 	if(!$data) die(mysqli_error($link));
 	$data = mysqli_fetch_assoc($data);
-<<<<<<< HEAD
 	if($data["password"] == $pass) {	
 		$r = [ "auth" => "authorized" ];
 		$a_token = md5(now()+'sdfsdfgsdfsdf'+$name);
@@ -66,12 +62,10 @@ function auth_user($link,$name,$pass){
 //		header('HTTP/1.1 401 Unauthorized');
 		http_response_code(401);
 	}
-=======
 	if($data["password"] == $pass) 	
 		 $r = [ "auth" => "authorized" ];
 	else
 		$r = [ "auth" => "auth_denied" ];
->>>>>>> origin/master
 	echo json_encode($r);
 
 }
