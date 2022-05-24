@@ -1,4 +1,4 @@
-https://snob.ru/indoc/tilda/1016864/images/tild6435-3536-4138-b264-336537656332__2022-04-28_225632.jpg
+
 
 function get_user_info($link,$name)   
 // получает инфо о юзере, запрос вида test.stbur.ru/user/user-3  <--"user-3" имя юзера
